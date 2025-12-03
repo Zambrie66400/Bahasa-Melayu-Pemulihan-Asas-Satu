@@ -1,0 +1,1240 @@
+<!doctype html>
+<html lang="ms">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bahasa Melayu Pemulihan Khas</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            min-height: 100%;
+            width: 100%;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.3), transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100%;
+            padding: 3% 4%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3%;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            padding: 3% 4%;
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            margin: 0 0 1% 0;
+            font-size: 3em;
+            font-weight: 700;
+            text-shadow: 
+                2px 2px 4px rgba(0,0,0,0.3),
+                0 0 20px rgba(255, 255, 255, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .header h2 {
+            margin: 0.5% 0;
+            font-size: 1.8em;
+            opacity: 0.95;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            margin: 1% 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3%;
+            margin-bottom: 2.5%;
+        }
+
+        .menu-button {
+            border: none;
+            border-radius: 25px;
+            padding: 10%;
+            color: white;
+            font-size: 1.5em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-button:nth-child(1) {
+            background: linear-gradient(145deg, #ff6b9d, #c94b7a);
+            box-shadow: 
+                0 10px 30px rgba(255, 107, 157, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-button:nth-child(1):hover {
+            background: linear-gradient(145deg, #ff7ba9, #d65688);
+            box-shadow: 
+                0 15px 40px rgba(255, 107, 157, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 0 30px rgba(255, 107, 157, 0.4);
+        }
+
+        .menu-button:nth-child(2) {
+            background: linear-gradient(145deg, #fbbf24, #f59e0b);
+            box-shadow: 
+                0 10px 30px rgba(251, 191, 36, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-button:nth-child(2):hover {
+            background: linear-gradient(145deg, #fcd34d, #f59e0b);
+            box-shadow: 
+                0 15px 40px rgba(251, 191, 36, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 0 30px rgba(251, 191, 36, 0.4);
+        }
+
+        .menu-button:nth-child(3) {
+            background: linear-gradient(145deg, #10b981, #059669);
+            box-shadow: 
+                0 10px 30px rgba(16, 185, 129, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-button:nth-child(3):hover {
+            background: linear-gradient(145deg, #34d399, #10b981);
+            box-shadow: 
+                0 15px 40px rgba(16, 185, 129, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 0 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .menu-button:nth-child(4) {
+            background: linear-gradient(145deg, #3b82f6, #2563eb);
+            box-shadow: 
+                0 10px 30px rgba(59, 130, 246, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-button:nth-child(4):hover {
+            background: linear-gradient(145deg, #60a5fa, #3b82f6);
+            box-shadow: 
+                0 15px 40px rgba(59, 130, 246, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 0 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .menu-button:nth-child(5) {
+            background: linear-gradient(145deg, #a855f7, #9333ea);
+            box-shadow: 
+                0 10px 30px rgba(168, 85, 247, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-button:nth-child(5):hover {
+            background: linear-gradient(145deg, #c084fc, #a855f7);
+            box-shadow: 
+                0 15px 40px rgba(168, 85, 247, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 0 30px rgba(168, 85, 247, 0.4);
+        }
+
+        .menu-button:nth-child(6) {
+            background: linear-gradient(145deg, #f43f5e, #e11d48);
+            box-shadow: 
+                0 10px 30px rgba(244, 63, 94, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-button:nth-child(6):hover {
+            background: linear-gradient(145deg, #fb7185, #f43f5e);
+            box-shadow: 
+                0 15px 40px rgba(244, 63, 94, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 0 30px rgba(244, 63, 94, 0.4);
+        }
+
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .menu-button:hover::before {
+            left: 100%;
+        }
+
+        .menu-button:hover {
+            transform: translateY(-8px) scale(1.03);
+        }
+
+        .menu-button:active {
+            transform: translateY(-3px) scale(0.98);
+            box-shadow: 
+                0 5px 20px rgba(0, 0, 0, 0.4),
+                inset 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-container {
+            display: none;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border-radius: 30px;
+            padding: 3%;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 1),
+                0 0 0 1px rgba(0, 0, 0, 0.1);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .game-container.active {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5%;
+            padding: 2% 2.5%;
+            background: linear-gradient(145deg, #667eea, #764ba2);
+            border-radius: 20px;
+            box-shadow: 
+                0 5px 20px rgba(102, 126, 234, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-title {
+            font-size: 2em;
+            color: white;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .score-board {
+            display: flex;
+            gap: 5%;
+            font-size: 1.5em;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1.5% 3%;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .score {
+            color: #10b981;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .question-number {
+            color: #fbbf24;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button {
+            background: linear-gradient(145deg, #6c757d, #5a6268);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 1.5% 3%;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 4px 15px rgba(108, 117, 125, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(145deg, #5a6268, #495057);
+            transform: translateY(-2px);
+            box-shadow: 
+                0 6px 20px rgba(108, 117, 125, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .back-button:active {
+            transform: translateY(0);
+            box-shadow: 
+                0 2px 10px rgba(108, 117, 125, 0.4),
+                inset 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-content {
+            text-align: center;
+            margin-top: 2.5%;
+        }
+
+        .target-letter {
+            font-size: 6em;
+            font-weight: bold;
+            background: linear-gradient(145deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 2% 0;
+            text-shadow: 
+                2px 2px 4px rgba(0,0,0,0.1),
+                0 0 30px rgba(102, 126, 234, 0.3);
+            filter: drop-shadow(3px 3px 6px rgba(102, 126, 234, 0.4));
+        }
+
+        .letter-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5%;
+            margin: 3% 0;
+        }
+
+        .letter-cell {
+            aspect-ratio: 1;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border: none;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                5px 5px 15px rgba(0, 0, 0, 0.15),
+                -5px -5px 15px rgba(255, 255, 255, 0.7),
+                inset 0 0 0 rgba(255, 255, 255, 0);
+            color: #333;
+        }
+
+        .letter-cell:hover {
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            transform: translateY(-3px);
+            box-shadow: 
+                7px 7px 20px rgba(0, 0, 0, 0.2),
+                -7px -7px 20px rgba(255, 255, 255, 0.9),
+                inset 0 0 5px rgba(102, 126, 234, 0.2);
+        }
+
+        .letter-cell:active {
+            box-shadow: 
+                inset 3px 3px 10px rgba(0, 0, 0, 0.2),
+                inset -3px -3px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .letter-cell.correct {
+            background: linear-gradient(145deg, #10b981, #059669);
+            color: white;
+            pointer-events: none;
+            box-shadow: 
+                0 8px 25px rgba(16, 185, 129, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .letter-cell.wrong {
+            background: linear-gradient(145deg, #ef4444, #dc2626);
+            color: white;
+            animation: shake 0.5s;
+            box-shadow: 
+                0 8px 25px rgba(239, 68, 68, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .word-display {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 3% 0;
+            letter-spacing: 0.2em;
+        }
+
+        .red-letter {
+            color: #dc3545;
+        }
+
+        .word-image {
+            width: 40%;
+            max-width: 300px;
+            margin: 2% auto;
+        }
+
+        .sequence-container {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 3% 0;
+            letter-spacing: 0.3em;
+            color: #333;
+        }
+
+        .blank {
+            display: inline-block;
+            width: 1.2em;
+            height: 1.2em;
+            border: 3px solid #667eea;
+            border-radius: 8px;
+            background: #f8f9fa;
+            vertical-align: middle;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2%;
+            margin: 3% 0;
+        }
+
+        .option-button {
+            aspect-ratio: 1;
+            background: linear-gradient(145deg, #ffffff, #e8e8e8);
+            border: none;
+            border-radius: 20px;
+            font-size: 3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #333;
+            box-shadow: 
+                6px 6px 20px rgba(0, 0, 0, 0.15),
+                -6px -6px 20px rgba(255, 255, 255, 0.7);
+        }
+
+        .option-button:hover {
+            background: linear-gradient(145deg, #f0f0f0, #d8d8d8);
+            transform: translateY(-3px);
+            box-shadow: 
+                8px 8px 25px rgba(0, 0, 0, 0.2),
+                -8px -8px 25px rgba(255, 255, 255, 0.9);
+        }
+
+        .option-button:active {
+            box-shadow: 
+                inset 4px 4px 12px rgba(0, 0, 0, 0.2),
+                inset -4px -4px 12px rgba(255, 255, 255, 0.5);
+        }
+
+        .pair-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2%;
+            margin: 3% 0;
+        }
+
+        .pair-cell {
+            aspect-ratio: 1;
+            background: linear-gradient(145deg, #ffffff, #e8e8e8);
+            border: none;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #333;
+            box-shadow: 
+                5px 5px 15px rgba(0, 0, 0, 0.15),
+                -5px -5px 15px rgba(255, 255, 255, 0.7);
+        }
+
+        .pair-cell:hover {
+            background: linear-gradient(145deg, #f0f0f0, #d8d8d8);
+            transform: translateY(-2px);
+            box-shadow: 
+                7px 7px 20px rgba(0, 0, 0, 0.2),
+                -7px -7px 20px rgba(255, 255, 255, 0.9);
+        }
+
+        .pair-cell:active {
+            box-shadow: 
+                inset 3px 3px 10px rgba(0, 0, 0, 0.2),
+                inset -3px -3px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .pair-cell.selected {
+            background: linear-gradient(145deg, #fbbf24, #f59e0b);
+            color: white;
+            box-shadow: 
+                0 6px 20px rgba(251, 191, 36, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3%;
+            margin: 3% 0;
+        }
+
+        .image-option {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border: none;
+            border-radius: 25px;
+            padding: 5%;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 
+                8px 8px 25px rgba(0, 0, 0, 0.15),
+                -8px -8px 25px rgba(255, 255, 255, 0.7);
+        }
+
+        .image-option:hover {
+            background: linear-gradient(145deg, #f8f9fa, #e8e8e8);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 
+                10px 10px 30px rgba(0, 0, 0, 0.2),
+                -10px -10px 30px rgba(255, 255, 255, 0.9),
+                0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .image-option:active {
+            transform: translateY(-2px) scale(1);
+            box-shadow: 
+                inset 5px 5px 15px rgba(0, 0, 0, 0.15),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .image-option svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-option p {
+            margin: 3% 0 0 0;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .result-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 3.5em;
+            font-weight: bold;
+            padding: 5%;
+            border-radius: 30px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            text-align: center;
+            min-width: 40%;
+        }
+
+        .result-message.show {
+            display: block;
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: translate(-50%, -50%) scale(0) rotate(-10deg);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2) rotate(5deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .result-message.success {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            color: #155724;
+            border: 5px solid #28a745;
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards, 
+                       celebrate 1s ease-in-out infinite;
+        }
+
+        @keyframes celebrate {
+            0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+            25% { transform: translate(-50%, -50%) scale(1.05) rotate(2deg); }
+            75% { transform: translate(-50%, -50%) scale(1.05) rotate(-2deg); }
+        }
+
+        .result-message.complete {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #004085;
+            border: 5px solid #0066cc;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .next-button {
+            background: linear-gradient(145deg, #10b981, #059669);
+            color: white;
+            border: none;
+            border-radius: 18px;
+            padding: 2% 5%;
+            font-size: 1.8em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 2%;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 6px 20px rgba(16, 185, 129, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .next-button:hover {
+            background: linear-gradient(145deg, #14c896, #069e73);
+            transform: translateY(-3px);
+            box-shadow: 
+                0 8px 25px rgba(16, 185, 129, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 0 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .next-button:active {
+            transform: translateY(-1px);
+            box-shadow: 
+                0 4px 15px rgba(16, 185, 129, 0.4),
+                inset 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="overlay" id="overlay"></div>
+  <div class="container">
+   <div class="header">
+    <h1 id="mainTitle">Bahasa Melayu Pemulihan Khas</h1>
+    <h2 id="subtitle">Asas 1</h2>
+    <p id="schoolInfo">2025@ZAMBRIE BIN MOHAMMED<br>
+     SK BUKIT CERMIN</p>
+   </div>
+   <div id="mainMenu">
+    <div class="menu-grid"><button class="menu-button" onclick="startGame(1)" id="btn1">🔤 Kenal Huruf</button> <button class="menu-button" onclick="startGame(2)" id="btn2">🔴 Huruf Merah</button> <button class="menu-button" onclick="startGame(3)" id="btn3">�� Susunan A-Z</button> <button class="menu-button" onclick="startGame(4)" id="btn4">✏️ Susunan a-z</button> <button class="menu-button" onclick="startGame(5)" id="btn5">🔗 Pasangan Huruf</button> <button class="menu-button" onclick="startGame(6)" id="btn6">🎯 Huruf Awalan</button>
+    </div>
+   </div>
+   <div id="game1" class="game-container">
+    <div class="game-header">
+     <h2 class="game-title">Kenal Huruf</h2>
+     <div class="score-board"><span class="question-number">Soalan: <span id="q1">1</span>/10</span> <span class="score">Skor: <span id="score1">0</span></span>
+     </div><button class="back-button" onclick="backToMenu()">← Kembali</button>
+    </div>
+    <div class="game-content">
+     <div class="target-letter" id="targetLetter1"></div>
+     <div class="letter-grid" id="letterGrid1"></div>
+     <div class="result-message" id="result1"></div>
+    </div>
+   </div>
+   <div id="game2" class="game-container">
+    <div class="game-header">
+     <h2 class="game-title">Huruf Merah</h2>
+     <div class="score-board"><span class="question-number">Soalan: <span id="q2">1</span>/10</span> <span class="score">Skor: <span id="score2">0</span></span>
+     </div><button class="back-button" onclick="backToMenu()">← Kembali</button>
+    </div>
+    <div class="game-content">
+     <div class="word-display" id="wordDisplay"></div>
+     <div id="wordImage"></div>
+     <div class="letter-grid" id="letterGrid2"></div>
+     <div class="result-message" id="result2"></div>
+    </div>
+   </div>
+   <div id="game3" class="game-container">
+    <div class="game-header">
+     <h2 class="game-title">Lengkapkan Susunan A-Z</h2>
+     <div class="score-board"><span class="question-number">Soalan: <span id="q3">1</span>/10</span> <span class="score">Skor: <span id="score3">0</span></span>
+     </div><button class="back-button" onclick="backToMenu()">← Kembali</button>
+    </div>
+    <div class="game-content">
+     <div class="sequence-container" id="sequence3"></div>
+     <div class="options-grid" id="options3"></div>
+     <div class="result-message" id="result3"></div>
+    </div>
+   </div>
+   <div id="game4" class="game-container">
+    <div class="game-header">
+     <h2 class="game-title">Lengkapkan Susunan a-z</h2>
+     <div class="score-board"><span class="question-number">Soalan: <span id="q4">1</span>/10</span> <span class="score">Skor: <span id="score4">0</span></span>
+     </div><button class="back-button" onclick="backToMenu()">← Kembali</button>
+    </div>
+    <div class="game-content">
+     <div class="sequence-container" id="sequence4"></div>
+     <div class="options-grid" id="options4"></div>
+     <div class="result-message" id="result4"></div>
+    </div>
+   </div>
+   <div id="game5" class="game-container">
+    <div class="game-header">
+     <h2 class="game-title">Pasangan Huruf</h2>
+     <div class="score-board"><span class="question-number">Soalan: <span id="q5">1</span>/10</span> <span class="score">Skor: <span id="score5">0</span></span>
+     </div><button class="back-button" onclick="backToMenu()">← Kembali</button>
+    </div>
+    <div class="game-content">
+     <div class="target-letter" id="targetLetter5"></div>
+     <p style="font-size: 1.8em; color: #666; margin: 2% 0;">Cari pasangan huruf yang betul:</p>
+     <div class="pair-grid" id="pairGrid"></div>
+     <div class="result-message" id="result5"></div>
+    </div>
+   </div>
+   <div id="game6" class="game-container">
+    <div class="game-header">
+     <h2 class="game-title">Huruf Awalan</h2>
+     <div class="score-board"><span class="question-number">Soalan: <span id="q6">1</span>/10</span> <span class="score">Skor: <span id="score6">0</span></span>
+     </div><button class="back-button" onclick="backToMenu()">← Kembali</button>
+    </div>
+    <div class="game-content">
+     <div class="target-letter" id="targetLetter6"></div>
+     <p style="font-size: 1.8em; color: #666; margin: 2% 0;">Klik gambar yang bermula dengan huruf ini:</p>
+     <div class="image-options" id="imageOptions"></div>
+     <div class="result-message" id="result6"></div>
+    </div>
+   </div>
+  </div>
+  <script>
+        const defaultConfig = {
+            main_title: "Bahasa Melayu Pemulihan Khas",
+            subtitle: "Asas 1",
+            school_info: "2025@ZAMBRIE BIN MOHAMMED\nSK BUKIT CERMIN",
+            button1_text: "🔤 Kenal Huruf",
+            button2_text: "🔴 Huruf Merah",
+            button3_text: "📝 Susunan A-Z",
+            button4_text: "✏️ Susunan a-z",
+            button5_text: "🔗 Pasangan Huruf",
+            button6_text: "🎯 Huruf Awalan"
+        };
+
+        const gameState = {
+            currentGame: 0,
+            currentQuestion: 1,
+            score: 0,
+            targetLetter: '',
+            correctAnswers: 0,
+            totalQuestions: 10
+        };
+
+        const words = [
+            { word: 'ANAK', image: '👶' },
+            { word: 'BUDAK', image: '🧒' },
+            { word: 'AYAH', image: '👨' },
+            { word: 'BASIKAL', image: '���' },
+            { word: 'CICI', image: '🐣' },
+            { word: 'DORA', image: '🎒' },
+            { word: 'CERMIN', image: '🪞' },
+            { word: 'DURIAN', image: '🌰' }
+        ];
+
+        const animals = {
+            'K': { name: 'KAMBING', emoji: '🐐' },
+            'A': { name: 'AYAM', emoji: '🐔' },
+            'I': { name: 'ITIK', emoji: '🦆' },
+            'U': { name: 'ULAR', emoji: '🐍' },
+            'G': { name: 'GAJAH', emoji: '🐘' },
+            'H': { name: 'HARIMAU', emoji: '🐯' },
+            'M': { name: 'MONYET', emoji: '🐵' },
+            'B': { name: 'BURUNG', emoji: '🐦' },
+            'L': { name: 'LEMBU', emoji: '🐄' },
+            'C': { name: 'CICAK', emoji: '🦎' }
+        };
+
+        function shuffle(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        function getRandomLetters(count, exclude = []) {
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').filter(l => !exclude.includes(l));
+            return shuffle(letters).slice(0, count);
+        }
+
+        function startGame(gameNum) {
+            document.getElementById('mainMenu').style.display = 'none';
+            document.getElementById(`game${gameNum}`).classList.add('active');
+            gameState.currentGame = gameNum;
+            gameState.currentQuestion = 1;
+            gameState.score = 0;
+            updateScore(gameNum);
+            
+            if (gameNum === 1) initGame1();
+            else if (gameNum === 2) initGame2();
+            else if (gameNum === 3) initGame3();
+            else if (gameNum === 4) initGame4();
+            else if (gameNum === 5) initGame5();
+            else if (gameNum === 6) initGame6();
+        }
+
+        function backToMenu() {
+            document.querySelectorAll('.game-container').forEach(g => g.classList.remove('active'));
+            document.getElementById('mainMenu').style.display = 'block';
+        }
+
+        function updateScore(gameNum) {
+            document.getElementById(`q${gameNum}`).textContent = gameState.currentQuestion;
+            document.getElementById(`score${gameNum}`).textContent = gameState.score;
+        }
+
+        function nextQuestion(gameNum) {
+            if (gameState.currentQuestion >= 10) {
+                showComplete(gameNum);
+            } else {
+                gameState.currentQuestion++;
+                updateScore(gameNum);
+                if (gameNum === 1) initGame1();
+                else if (gameNum === 2) initGame2();
+                else if (gameNum === 3) initGame3();
+                else if (gameNum === 4) initGame4();
+                else if (gameNum === 5) initGame5();
+                else if (gameNum === 6) initGame6();
+            }
+        }
+
+        function showResult(gameNum, success) {
+            const resultDiv = document.getElementById(`result${gameNum}`);
+            const overlay = document.getElementById('overlay');
+            
+            if (success) {
+                const messages = [
+                    '🎉 HEBAT SANGAT! 🎉',
+                    '⭐ TERBAIK! SYABAS! ⭐',
+                    '🌟 CEMERLANG! 🌟',
+                    '🎊 PANDAI! TAHNIAH! 🎊',
+                    '✨ LUAR BIASA! ✨',
+                    '🏆 JAWAPAN BETUL! 🏆'
+                ];
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                
+                resultDiv.className = 'result-message show success';
+                resultDiv.textContent = randomMessage;
+                overlay.classList.add('show');
+                
+                gameState.score++;
+                updateScore(gameNum);
+                
+                setTimeout(() => {
+                    resultDiv.classList.remove('show');
+                    overlay.classList.remove('show');
+                    nextQuestion(gameNum);
+                }, 2000);
+            }
+        }
+
+        function showComplete(gameNum) {
+            const resultDiv = document.getElementById(`result${gameNum}`);
+            resultDiv.className = 'result-message show complete';
+            resultDiv.innerHTML = `🎉 Tamat! Skor anda: ${gameState.score}/10<br><button class="next-button" onclick="backToMenu()">Kembali ke Menu</button>`;
+        }
+
+        // Game 1: Kenal Huruf
+        function initGame1() {
+            const isUpperCase = Math.random() > 0.5;
+            const letter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+            gameState.targetLetter = isUpperCase ? letter : letter.toLowerCase();
+            gameState.correctAnswers = 8 + Math.floor(Math.random() * 3); // 8, 9, or 10
+            
+            document.getElementById('targetLetter1').textContent = gameState.targetLetter;
+            
+            const grid = document.getElementById('letterGrid1');
+            grid.innerHTML = '';
+            
+            const letters = [];
+            for (let i = 0; i < gameState.correctAnswers; i++) {
+                letters.push(gameState.targetLetter);
+            }
+            
+            while (letters.length < 42) {
+                const randomLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                letters.push(isUpperCase ? randomLetter : randomLetter.toLowerCase());
+            }
+            
+            shuffle(letters).forEach(l => {
+                const cell = document.createElement('div');
+                cell.className = 'letter-cell';
+                cell.textContent = l;
+                cell.onclick = () => checkLetter1(cell, l);
+                grid.appendChild(cell);
+            });
+        }
+
+        let foundCount = 0;
+        function checkLetter1(cell, letter) {
+            if (cell.classList.contains('correct') || cell.classList.contains('wrong')) return;
+            
+            if (letter === gameState.targetLetter) {
+                cell.classList.add('correct');
+                foundCount++;
+                if (foundCount >= gameState.correctAnswers) {
+                    foundCount = 0;
+                    showResult(1, true);
+                }
+            } else {
+                cell.classList.add('wrong');
+                setTimeout(() => cell.classList.remove('wrong'), 500);
+            }
+        }
+
+        // Game 2: Huruf Merah
+        function initGame2() {
+            const wordData = words[Math.floor(Math.random() * words.length)];
+            const redIndex = Math.floor(Math.random() * wordData.word.length);
+            gameState.targetLetter = wordData.word[redIndex];
+            
+            const wordHTML = wordData.word.split('').map((l, i) => 
+                `<span class="${i === redIndex ? 'red-letter' : ''}">${l}</span>`
+            ).join('');
+            
+            document.getElementById('wordDisplay').innerHTML = wordHTML;
+            document.getElementById('wordImage').innerHTML = `<div style="font-size: 8em; margin: 2% 0;">${wordData.image}</div>`;
+            
+            const grid = document.getElementById('letterGrid2');
+            grid.innerHTML = '';
+            
+            const letters = [gameState.targetLetter];
+            const otherLetters = getRandomLetters(41, [gameState.targetLetter]);
+            letters.push(...otherLetters);
+            
+            shuffle(letters).forEach(l => {
+                const cell = document.createElement('div');
+                cell.className = 'letter-cell';
+                cell.textContent = l;
+                cell.onclick = () => checkLetter2(cell, l);
+                grid.appendChild(cell);
+            });
+        }
+
+        function checkLetter2(cell, letter) {
+            if (cell.classList.contains('correct') || cell.classList.contains('wrong')) return;
+            
+            if (letter === gameState.targetLetter) {
+                cell.classList.add('correct');
+                showResult(2, true);
+            } else {
+                cell.classList.add('wrong');
+                setTimeout(() => cell.classList.remove('wrong'), 500);
+            }
+        }
+
+        // Game 3: Susunan A-Z
+        function initGame3() {
+            const startPos = Math.floor(Math.random() * 22); // 0-21
+            const sequence = [];
+            for (let i = 0; i < 5; i++) {
+                sequence.push(String.fromCharCode(65 + startPos + i));
+            }
+            
+            const blankPos = 1 + Math.floor(Math.random() * 3); // 1, 2, or 3
+            gameState.targetLetter = sequence[blankPos];
+            
+            const sequenceHTML = sequence.map((l, i) => 
+                i === blankPos ? '<span class="blank"></span>' : l
+            ).join(', ');
+            
+            document.getElementById('sequence3').innerHTML = sequenceHTML;
+            
+            const options = [gameState.targetLetter];
+            const wrongOptions = getRandomLetters(3, [gameState.targetLetter]);
+            options.push(...wrongOptions);
+            
+            const optionsDiv = document.getElementById('options3');
+            optionsDiv.innerHTML = '';
+            
+            shuffle(options).forEach(l => {
+                const btn = document.createElement('button');
+                btn.className = 'option-button';
+                btn.textContent = l;
+                btn.onclick = () => checkSequence(3, btn, l);
+                optionsDiv.appendChild(btn);
+            });
+        }
+
+        // Game 4: Susunan a-z
+        function initGame4() {
+            const startPos = Math.floor(Math.random() * 22);
+            const sequence = [];
+            for (let i = 0; i < 5; i++) {
+                sequence.push(String.fromCharCode(97 + startPos + i));
+            }
+            
+            const blankPos = 1 + Math.floor(Math.random() * 3);
+            gameState.targetLetter = sequence[blankPos];
+            
+            const sequenceHTML = sequence.map((l, i) => 
+                i === blankPos ? '<span class="blank"></span>' : l
+            ).join(', ');
+            
+            document.getElementById('sequence4').innerHTML = sequenceHTML;
+            
+            const options = [gameState.targetLetter];
+            const wrongOptions = getRandomLetters(3, [gameState.targetLetter.toUpperCase()]).map(l => l.toLowerCase());
+            options.push(...wrongOptions);
+            
+            const optionsDiv = document.getElementById('options4');
+            optionsDiv.innerHTML = '';
+            
+            shuffle(options).forEach(l => {
+                const btn = document.createElement('button');
+                btn.className = 'option-button';
+                btn.textContent = l;
+                btn.onclick = () => checkSequence(4, btn, l);
+                optionsDiv.appendChild(btn);
+            });
+        }
+
+        function checkSequence(gameNum, btn, letter) {
+            if (letter === gameState.targetLetter) {
+                btn.style.background = '#28a745';
+                btn.style.color = 'white';
+                btn.style.borderColor = '#28a745';
+                showResult(gameNum, true);
+            } else {
+                btn.style.background = '#dc3545';
+                btn.style.color = 'white';
+                btn.style.borderColor = '#dc3545';
+                setTimeout(() => {
+                    btn.style.background = '#f8f9fa';
+                    btn.style.color = 'black';
+                    btn.style.borderColor = '#dee2e6';
+                }, 500);
+            }
+        }
+
+        // Game 5: Pasangan Huruf
+        function initGame5() {
+            const upperLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+            const lowerLetter = upperLetter.toLowerCase();
+            gameState.targetLetter = Math.random() > 0.5 ? upperLetter : lowerLetter;
+            const correctPair = gameState.targetLetter === upperLetter ? lowerLetter : upperLetter;
+            
+            document.getElementById('targetLetter5').textContent = gameState.targetLetter;
+            
+            const pairs = [correctPair];
+            const wrongPairs = [];
+            const isLookingForLower = gameState.targetLetter === upperLetter;
+            
+            while (wrongPairs.length < 9) {
+                const randomLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                const pair = isLookingForLower ? randomLetter.toLowerCase() : randomLetter;
+                if (pair !== correctPair && !wrongPairs.includes(pair)) {
+                    wrongPairs.push(pair);
+                }
+            }
+            
+            pairs.push(...wrongPairs);
+            
+            const grid = document.getElementById('pairGrid');
+            grid.innerHTML = '';
+            
+            shuffle(pairs).forEach(l => {
+                const cell = document.createElement('div');
+                cell.className = 'pair-cell';
+                cell.textContent = l;
+                cell.onclick = () => checkPair(cell, l, correctPair);
+                grid.appendChild(cell);
+            });
+        }
+
+        function checkPair(cell, letter, correctPair) {
+            if (cell.classList.contains('correct') || cell.classList.contains('wrong')) return;
+            
+            if (letter === correctPair) {
+                cell.classList.add('correct');
+                cell.style.background = '#28a745';
+                cell.style.borderColor = '#28a745';
+                cell.style.color = 'white';
+                showResult(5, true);
+            } else {
+                cell.classList.add('wrong');
+                setTimeout(() => cell.classList.remove('wrong'), 500);
+            }
+        }
+
+        // Game 6: Huruf Awalan
+        function initGame6() {
+            const animalKeys = Object.keys(animals);
+            const correctKey = animalKeys[Math.floor(Math.random() * animalKeys.length)];
+            gameState.targetLetter = correctKey;
+            
+            document.getElementById('targetLetter6').textContent = correctKey;
+            
+            const options = [animals[correctKey]];
+            const wrongKeys = shuffle(animalKeys.filter(k => k !== correctKey)).slice(0, 3);
+            wrongKeys.forEach(k => options.push(animals[k]));
+            
+            const optionsDiv = document.getElementById('imageOptions');
+            optionsDiv.innerHTML = '';
+            
+            shuffle(options).forEach(animal => {
+                const div = document.createElement('div');
+                div.className = 'image-option';
+                div.innerHTML = `
+                    <div style="font-size: 8em;">${animal.emoji}</div>
+                `;
+                div.onclick = () => checkAnimal(div, animal.name);
+                optionsDiv.appendChild(div);
+            });
+        }
+
+        function checkAnimal(div, name) {
+            if (name === animals[gameState.targetLetter].name) {
+                div.style.borderColor = '#28a745';
+                div.style.background = '#d4edda';
+                showResult(6, true);
+            } else {
+                div.style.borderColor = '#dc3545';
+                div.style.background = '#f8d7da';
+                setTimeout(() => {
+                    div.style.borderColor = '#dee2e6';
+                    div.style.background = '#f8f9fa';
+                }, 500);
+            }
+        }
+
+        async function onConfigChange(config) {
+            const mainTitle = config.main_title || defaultConfig.main_title;
+            const subtitle = config.subtitle || defaultConfig.subtitle;
+            const schoolInfo = config.school_info || defaultConfig.school_info;
+            const button1Text = config.button1_text || defaultConfig.button1_text;
+            const button2Text = config.button2_text || defaultConfig.button2_text;
+            const button3Text = config.button3_text || defaultConfig.button3_text;
+            const button4Text = config.button4_text || defaultConfig.button4_text;
+            const button5Text = config.button5_text || defaultConfig.button5_text;
+            const button6Text = config.button6_text || defaultConfig.button6_text;
+
+            document.getElementById('mainTitle').textContent = mainTitle;
+            document.getElementById('subtitle').textContent = subtitle;
+            document.getElementById('schoolInfo').innerHTML = schoolInfo.replace(/\\n/g, '<br>');
+            document.getElementById('btn1').textContent = button1Text;
+            document.getElementById('btn2').textContent = button2Text;
+            document.getElementById('btn3').textContent = button3Text;
+            document.getElementById('btn4').textContent = button4Text;
+            document.getElementById('btn5').textContent = button5Text;
+            document.getElementById('btn6').textContent = button6Text;
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["main_title", config.main_title || defaultConfig.main_title],
+                ["subtitle", config.subtitle || defaultConfig.subtitle],
+                ["school_info", config.school_info || defaultConfig.school_info],
+                ["button1_text", config.button1_text || defaultConfig.button1_text],
+                ["button2_text", config.button2_text || defaultConfig.button2_text],
+                ["button3_text", config.button3_text || defaultConfig.button3_text],
+                ["button4_text", config.button4_text || defaultConfig.button4_text],
+                ["button5_text", config.button5_text || defaultConfig.button5_text],
+                ["button6_text", config.button6_text || defaultConfig.button6_text]
+            ]);
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities: () => ({
+                    recolorables: [],
+                    borderables: [],
+                    fontEditable: undefined,
+                    fontSizeable: undefined
+                }),
+                mapToEditPanelValues
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a79694b37dce41e',t:'MTc2NDY2MzY5Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
